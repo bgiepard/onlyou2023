@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bartekgiepard.onlYou"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "75a78123-88f6-4069-9ea7-3d7e5fd8e5d9"
+      }
+    },
+    "scheme": "onl-you"
   }
 }
