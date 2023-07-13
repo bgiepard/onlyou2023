@@ -1,14 +1,56 @@
-import {View, Text, Button} from "react-native";
+import {View, Text, TouchableOpacity, Image} from "react-native";
 import useAuth from "../hooks/useAuth";
+import {globalStyles} from "../global";
+import {useNavigation} from "@react-navigation/native";
+import logoImage from "../assets/logo.png";
 
 const LoginScreen = () => {
-  const { user, signInWithGoogle } = useAuth()
+  const {  signInWithGoogle } = useAuth();
+  const fb = require('../assets/fb.png');
+  const google = require('../assets/google.png');
+  const apple = require('../assets/apple.png');
+
+  const navigation = useNavigation();
+  const handleLogin = () => {
+    signInWithGoogle();
+  }
+
   return (
-    <View>
-      <Text>
-        Login { user }
-      </Text>
-      <Button title="Login Google" onPress={signInWithGoogle}/>
+    <View style={globalStyles.loginView}>
+      <View style={globalStyles.logoWrapper}>
+        <Image
+          source={logoImage}
+          style={globalStyles.logo}
+        />
+      </View>
+
+      <View style={globalStyles.loginWrapper}>
+        <Text style={globalStyles.headingText}>
+          Zaloguj się
+        </Text>
+
+        <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
+          <Image source={fb} style={{width: 30, height: 30}}/>
+          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Facebook</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
+          <Image source={google} style={{width: 30, height: 30}}/>
+          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Google</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
+          <Image source={apple} style={{width: 28, height: 30}}/>
+          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Apple</Text>
+        </TouchableOpacity>
+
+      </View>
+
+      <View style={globalStyles.loginFooterInfo}>
+        <Text style={[globalStyles.headingText, globalStyles.loginHeadingInfo]}>Pamiętaj</Text>
+        <Text style={globalStyles.footerText}>Logując się, akceptujesz <Text style={globalStyles.footerLink} onPress={() => navigation.navigate("X")}>Regulamin.</Text></Text>
+        <Text style={globalStyles.footerText}>Informacje na temat sposobu, w jaki wykorzystujemy Twoje dane, znajdziesz w naszej <Text style={globalStyles.footerLink} onPress={() => navigation.navigate("X")}>Polityce prywatności.</Text></Text>
+      </View>
     </View>
   )
 }

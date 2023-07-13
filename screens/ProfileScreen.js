@@ -1,5 +1,5 @@
-import {View, Text, ScrollView, Image, TouchableOpacity, TextInput, SafeAreaView, FlatList, Button} from "react-native";
-import {useState} from "react";
+import {View, Text, ScrollView, Image, TouchableOpacity, TextInput, FlatList,} from "react-native";
+import { useState, useRef } from "react";
 import logoImage from '../assets/logo.png'
 import locationImage from "../assets/location.png";
 import addIcon from "../assets/add.png";
@@ -15,29 +15,29 @@ const Hello = ({setAcceptance}) => {
       </Text>
 
       <ScrollView>
-        <View>
-          <Text style={globalStyles.subHeading}>Pokaż Siebie!</Text>
-          <Text>Nie udawaj kogoś kim nie jesteś. Bądź sobą. Wstaw swoje zdjęcia.</Text>
+        <View style={globalStyles.helloTextWrapper}>
+          <Text style={globalStyles.subHeading}><Text style={globalStyles.unicodeSquare}>{'\u2B1B'}</Text>   Pokaż Siebie!</Text>
+          <Text>   Nie udawaj kogoś kim nie jesteś. Bądź sobą. Wstaw swoje zdjęcia.</Text>
         </View>
 
-        <View>
-          <Text style={globalStyles.subHeading}>Bądź ostrożny!</Text>
-          <Text>Nikomu nie udostępniaj prywatnych danych osobowych, aby nie narażać się na oszustwa i wymuszenia.</Text>
+        <View style={globalStyles.helloTextWrapper}>
+          <Text style={globalStyles.subHeading}><Text style={globalStyles.unicodeSquare}>{'\u2B1B'}</Text>   Bądź ostrożny!</Text>
+          <Text>   Nikomu nie udostępniaj prywatnych danych osobowych, aby nie narażać się na oszustwa i wymuszenia.</Text>
         </View>
 
-        <View>
-          <Text style={globalStyles.subHeading}>Szanuj wpisy innych!</Text>
-          <Text>Każdy ma prawo wyrazić chęć spędzania czasu jak lubi.</Text>
+        <View style={globalStyles.helloTextWrapper}>
+          <Text style={globalStyles.subHeading}><Text style={globalStyles.unicodeSquare}>{'\u2B1B'}</Text>   Szanuj wpisy innych!</Text>
+          <Text>   Każdy ma prawo wyrazić chęć spędzania czasu jak lubi.</Text>
         </View>
 
-        <View>
-          <Text style={globalStyles.subHeading}>Bądź Fair!</Text>
-          <Text>Zgłaszaj nam jeśli widzisz nieodpowiednie zachowanie. Jesteśmy po to by każdy użytkownik czuł się bezpiecznie.</Text>
+        <View style={globalStyles.helloTextWrapper}>
+          <Text style={globalStyles.subHeading}><Text style={globalStyles.unicodeSquare}>{'\u2B1B'}</Text>   Bądź Fair!</Text>
+          <Text>   Zgłaszaj nam jeśli widzisz nieodpowiednie zachowanie. Jesteśmy po to by każdy użytkownik czuł się bezpiecznie.</Text>
         </View>
 
-        <View>
-          <Text style={globalStyles.subHeading}>Poleć Nas!</Text>
-          <Text>Jeśli spodoba Ci się nasza aplikacja opowiedz o niej innym! :)</Text>
+        <View style={globalStyles.helloTextWrapper}>
+          <Text style={globalStyles.subHeading}><Text style={globalStyles.unicodeSquare}>{'\u2B1B'}</Text>   Poleć Nas!</Text>
+          <Text>   Jeśli spodoba Ci się nasza aplikacja opowiedz o niej innym! :)</Text>
         </View>
 
       </ScrollView>
@@ -52,38 +52,63 @@ const Hello = ({setAcceptance}) => {
 }
 
 const Style = ({setAccept}) => {
+  const koniczyna = require('../assets/koniczyna.png');
+  const mucha = require('../assets/mucha.png');
+  const nutka = require('../assets/nutka.png');
+  const pilka = require('../assets/piłka.png');
+  const tulipan = require('../assets/tulipan.png');
+  const walizka = require('../assets/walizka.png');
+
   return (
     <View style={globalStyles.infoWrapper}>
-      <Text style={globalStyles.headingText}>Styl spotkania zależy od ubioru</Text>
+      <Text style={globalStyles.headingText}>Styl spotkania zależy od ubioru.</Text>
 
       <ScrollView>
         <View>
-          <Text style={globalStyles.subHeading}>Imprezowicz</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={nutka} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Imprezowicz</Text>
+          </View>
           <Text>Doskonała okazja aby zaszaleć! Zostań gwiazdą wieczoru</Text>
         </View>
 
         <View>
-          <Text style={globalStyles.subHeading}>Luzak</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={koniczyna} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Luzak</Text>
+          </View>
           <Text>Tutaj możesz ubrać się tak jak lubisz. Poczuj się swobodnie. Wszystkie chwyty dozwolone.</Text>
         </View>
 
         <View>
-          <Text style={globalStyles.subHeading}>Romantyk</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={tulipan} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Romantyk</Text>
+          </View>
           <Text>Lubisz wprawiać w wrażenie? Podsyć trochę atmosferę, ale zachowaj nutkę słodyczy.</Text>
         </View>
 
         <View>
-          <Text style={globalStyles.subHeading}>Sportowiec</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={pilka} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Sportowiec</Text>
+          </View>
           <Text>Sport to idealny moment do założenia luźnych lub obcisłych rzeczy. Strój nie może ograniczać Twojego zakresu ruchu.</Text>
         </View>
 
         <View>
-          <Text style={globalStyles.subHeading}>Podróżnik</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={walizka} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Podróżnik</Text>
+          </View>
           <Text>Wspólny wyjazd? Najlepszym rozwiąazniem będzie ubrać się na cebulkę. Musisz być przygotowana/y na każdą ewentualność.</Text>
         </View>
 
         <View>
-          <Text style={globalStyles.subHeading}>Elegant</Text>
+          <View style={globalStyles.profileStyle}>
+            <Image source={mucha} style={{width: 25, height: 25}} />
+            <Text style={globalStyles.subHeading}>Elegant</Text>
+          </View>
           <Text>Sukienka i marynarka to idealny motyw przewodni Waszego spotkania</Text>
         </View>
       </ScrollView>
@@ -159,19 +184,54 @@ const Birthday = ({setBirthday}) => {
   const [month, setMonth] = useState(null);
   const [year, setYear] = useState(null);
 
+  const monthInputRef = useRef(null);
+  const yearInputRef = useRef(null);
+
   return (
     <View>
       <Text style={globalStyles.headingText}>Kiedy masz urodziny?</Text>
       <View style={globalStyles.inputsWrapper}>
-        <TextInput keyboardType="numeric" maxLength={2} style={[globalStyles.customInput, globalStyles.inputSmall]} placeholder="01" value={day} onChangeText={(text) => setDay(text)}/>
-        <TextInput keyboardType="numeric" maxLength={2} style={[globalStyles.customInput, globalStyles.inputSmall]} placeholder="01" value={month} onChangeText={(text) => setMonth(text)}/>
-        <TextInput keyboardType="numeric" maxLength={4} style={[globalStyles.customInput, globalStyles.inputMedium]} placeholder="2000" value={year} onChangeText={(text) => setYear(text)}/>
+        <TextInput
+          keyboardType="numeric"
+          maxLength={2}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputSmall]}
+          placeholder="01"
+          value={day}
+          onChangeText={(text) => {
+            setDay(text);
+            if(text.length === 2) monthInputRef.current.focus();
+          }}
+        />
+        <TextInput
+          ref={monthInputRef}
+          keyboardType="numeric"
+          maxLength={2}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputSmall]}
+          placeholder="01"
+          value={month}
+          onChangeText={(text) => {
+            setMonth(text);
+            if(text.length === 2) yearInputRef.current.focus();
+          }}
+        />
+        <TextInput
+          ref={yearInputRef}
+          keyboardType="numeric"
+          maxLength={4}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputMedium]}
+          placeholder="2000"
+          value={year}
+          onChangeText={(text) => setYear(text)}
+        />
       </View>
 
       <View style={globalStyles.buttonWrapper}>
         <TouchableOpacity style={day && month && year ? globalStyles.button : globalStyles.disabledButton}
                           onPress={() => setBirthday(day+month+year)}
-                    disabled={!day || !month || !year}>
+                          disabled={!day || !month || !year}>
           <Text style={globalStyles.buttonText}>Dalej</Text>
         </TouchableOpacity>
       </View>
@@ -185,28 +245,70 @@ const PhoneNumber = ({setPhoneNumber}) => {
   const [b, setB] = useState(null);
   const [c, setC] = useState(null);
   const [d, setD] = useState(null);
+
+  const bInputRef = useRef(null);
+  const cInputRef = useRef(null);
+  const dInputRef = useRef(null);
+
   return (
     <View>
       <Text style={globalStyles.headingText}>Twój numer telefonu</Text>
-      <View style={globalStyles.inputsWrapper}>
-        <TextInput keyboardType="numeric" maxLength={3} style={[globalStyles.customInput, globalStyles.inputSmall]} placeholder="48"
-          value={a} onChangeText={(text) => setA(text)}
+      <View style={[globalStyles.inputsWrapper, globalStyles.inputsPhoneWrapper]}>
+        <TextInput
+          keyboardType="numeric"
+          maxLength={3}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputPhoneSmall]}
+          placeholder="48"
+          value={a}
+          onChangeText={(text) => {
+            setA(text);
+            if(text.length === 3) bInputRef.current.focus();
+          }}
         />
-        <TextInput keyboardType="numeric" maxLength={3} style={[globalStyles.customInput, globalStyles.inputMedium]} placeholder="100"
-          value={b} onChangeText={(text) => setB(text)}
+        <TextInput
+          ref={bInputRef}
+          keyboardType="numeric"
+          maxLength={3}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputSmall]}
+          placeholder="100"
+          value={b}
+          onChangeText={(text) => {
+            setB(text);
+            if(text.length === 3) cInputRef.current.focus();
+          }}
         />
-        <TextInput keyboardType="numeric" maxLength={3} style={[globalStyles.customInput, globalStyles.inputMedium]} placeholder="200"
-          value={c} onChangeText={(text) => setC(text)}
+        <TextInput
+          ref={cInputRef}
+          keyboardType="numeric"
+          maxLength={3}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputSmall]}
+          placeholder="200"
+          value={c}
+          onChangeText={(text) => {
+            setC(text);
+            if(text.length === 3) dInputRef.current.focus();
+          }}
         />
-        <TextInput keyboardType="numeric" maxLength={3} style={[globalStyles.customInput, globalStyles.inputMedium]} placeholder="300"
-          value={d} onChangeText={(text) => setD(text)}
+        <TextInput
+          ref={dInputRef}
+          keyboardType="numeric"
+          maxLength={3}
+          placeholderTextColor="#bea657"
+          style={[globalStyles.customInput, globalStyles.inputSmall]}
+          placeholder="300"
+          value={d}
+          onChangeText={(text) => setD(text)}
         />
       </View>
 
       <View style={globalStyles.buttonWrapper}>
-        <TouchableOpacity disabled={ !b || !c || !d}
-                          style={a && b && c && d ? globalStyles.button : globalStyles.disabledButton}
-                          onPress={() => setPhoneNumber(a+b+c+d)}>
+        <TouchableOpacity
+          disabled={!a || !b || !c || !d}
+          style={a && b && c && d ? globalStyles.button : globalStyles.disabledButton}
+          onPress={() => setPhoneNumber(a+b+c+d)}>
           <Text style={globalStyles.buttonText}>Dalej</Text>
         </TouchableOpacity>
       </View>
@@ -214,6 +316,7 @@ const PhoneNumber = ({setPhoneNumber}) => {
     </View>
   )
 }
+
 
 const Gallery = ({setGallery}) => {
   return (
@@ -244,42 +347,66 @@ const Gallery = ({setGallery}) => {
   )
 }
 
-const Item = ({title}) => (
-  <View style={{backgroundColor: 'green', marginBottom: 10}}>
-    <Button title={title} />
-  </View>
+const Item = ({ title, onPress, selected }) => (
+  <TouchableOpacity
+    style={[
+      globalStyles.interestsItem,
+      selected ? globalStyles.interestsItemSelected : null,
+    ]}
+    onPress={onPress}
+  >
+    <Text style={globalStyles.interestsItemText}>{title}</Text>
+  </TouchableOpacity>
 );
 
-const Interests = ({profile}) => {
+const Interests = ({ profile }) => {
   const navigation = useNavigation();
 
   const { setProfile } = useAuth();
+  const [selectedItems, setSelectedItems] = useState([]);
+
   const handleSave = () => {
+    setProfile({...profile, interests: selectedItems, name: 'Bartek'});
+    navigation.navigate('Home');
+  };
 
-    setProfile(profile);
-
-    navigation.navigate("Home")
-  }
+  const handleItemPress = (itemId) => {
+    if (selectedItems.includes(itemId)) {
+      setSelectedItems(selectedItems.filter((id) => id !== itemId));
+    } else {
+      if (selectedItems.length < 10) {
+        setSelectedItems([...selectedItems, itemId]);
+      }
+    }
+  };
 
   return (
     <View style={globalStyles.interestsWrapper}>
-        <FlatList
-          data={interests}
-          renderItem={({item}) => <Item title={item.name} />}
-          keyExtractor={item => item.id}
-        />
+      <FlatList
+        data={interests}
+        renderItem={({ item }) => (
+          <Item
+            title={item.name}
+            onPress={() => handleItemPress(item.id)}
+            selected={selectedItems.includes(item.id)}
+          />
+        )}
+        keyExtractor={(item) => item.id}
+      />
 
       <View style={globalStyles.buttonWrapper}>
-        <TouchableOpacity style={globalStyles.button} onPress={handleSave}>
+        <TouchableOpacity style={selectedItems.length > 0 ? globalStyles.button : globalStyles.disabledButton}
+                          disabled={selectedItems.length < 1} onPress={handleSave}>
           <Text style={globalStyles.buttonText}>Zapisz</Text>
         </TouchableOpacity>
       </View>
     </View>
-  )
-}
+  );
+};
 
 const ProfileScreen = () => {
   const [user, setUser] = useState({
+    name: null,
     accept: null,
     style: null,
     gender: null,
@@ -332,7 +459,7 @@ const ProfileScreen = () => {
       {step() === 6 && <Gallery setGallery={()=> setUser(prevState => {
         return {...prevState, gallery: true}
       })}/>}
-      {step() === 7 && <Interests profile={user}/>}
+      {step() === 7 && <Interests profile={user} />}
     </View>
   )
 }

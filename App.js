@@ -25,7 +25,7 @@ export default function App() {
   }
 
   return (
-    <View onLayout={onLayoutRootView} style={{flex: 1}}>
+    <View onLayout={onLayoutRootView} style={{flex: 1, backgroundColor: '#ffffff'}}>
       <NavigationContainer>
         <AuthProvider>
           <StackNavigator></StackNavigator>
