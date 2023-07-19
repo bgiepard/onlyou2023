@@ -48,8 +48,9 @@ const LoginScreen = () => {
 
       <View style={globalStyles.loginFooterInfo}>
         <Text style={[globalStyles.headingText, globalStyles.loginHeadingInfo]}>Pamiętaj</Text>
-        <Text style={globalStyles.footerText}>Logując się, akceptujesz <Text style={globalStyles.footerLink} onPress={() => navigation.navigate("X")}>Regulamin.</Text></Text>
-        <Text style={globalStyles.footerText}>Informacje na temat sposobu, w jaki wykorzystujemy Twoje dane, znajdziesz w naszej <Text style={globalStyles.footerLink} onPress={() => navigation.navigate("X")}>Polityce prywatności.</Text></Text>
+        <Text style={globalStyles.footerText}>Logując się, akceptujesz <Text onPress={() => navigation.navigate("Regulamin")}><Text style={globalStyles.footerLink}>Regulamin.</Text></Text></Text>
+        <Text style={globalStyles.footerText}>Informacje na temat sposobu, w jaki wykorzystujemy Twoje dane, znajdziesz w naszej <Text onPress={() => navigation.navigate("Polityka")}><Text style={globalStyles.footerLink}>Polityce prywatności.</Text></Text>
+        </Text>
       </View>
     </View>
   )

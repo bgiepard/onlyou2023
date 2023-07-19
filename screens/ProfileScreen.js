@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, Image, TouchableOpacity, TextInput, FlatList,} from "react-native";
+import {View, Text, ScrollView, Image, TouchableOpacity, TextInput, FlatList, SafeAreaView,} from "react-native";
 import { useState, useRef } from "react";
 import logoImage from '../assets/logo.png'
 import locationImage from "../assets/location.png";
@@ -180,9 +180,9 @@ const Localization = ({setLocation}) => {
 }
 
 const Birthday = ({setBirthday}) => {
-  const [day, setDay] = useState(null);
-  const [month, setMonth] = useState(null);
-  const [year, setYear] = useState(null);
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
 
   const monthInputRef = useRef(null);
   const yearInputRef = useRef(null);
@@ -241,10 +241,10 @@ const Birthday = ({setBirthday}) => {
 }
 
 const PhoneNumber = ({setPhoneNumber}) => {
-  const [a, setA] = useState(null);
-  const [b, setB] = useState(null);
-  const [c, setC] = useState(null);
-  const [d, setD] = useState(null);
+  const [a, setA] = useState("");
+  const [b, setB] = useState("");
+  const [c, setC] = useState("");
+  const [d, setD] = useState("");
 
   const bInputRef = useRef(null);
   const cInputRef = useRef(null);
@@ -312,7 +312,6 @@ const PhoneNumber = ({setPhoneNumber}) => {
           <Text style={globalStyles.buttonText}>Dalej</Text>
         </TouchableOpacity>
       </View>
-
     </View>
   )
 }
@@ -320,7 +319,7 @@ const PhoneNumber = ({setPhoneNumber}) => {
 
 const Gallery = ({setGallery}) => {
   return (
-    <View>
+    <SafeAreaView style={{flex: 1}}>
       <Text style={globalStyles.headingText}>Dodaj swoje zdjęcia</Text>
 
       <View style={globalStyles.galleryItems}>
@@ -328,13 +327,13 @@ const Gallery = ({setGallery}) => {
           <View style={[globalStyles.galleryItem, globalStyles.galleryItemActive]}>
             <Image source={addIcon} style={{ width: 70, height: 70}}/>
           </View>
-          <View style={globalStyles.galleryItem}></View>
-          <View style={globalStyles.galleryItem}></View>
+          <View style={globalStyles.galleryItem}><Text>2</Text></View>
+          <View style={globalStyles.galleryItem}><Text>3</Text></View>
         </View>
-        <View style={globalStyles.galleryView}>
-          <View style={globalStyles.galleryItem}></View>
-          <View style={globalStyles.galleryItem}></View>
-          <View style={globalStyles.galleryItem}></View>
+        <View style={globalStyles.galleryView2}>
+          <View style={globalStyles.galleryItem}><Text>4</Text></View>
+          <View style={globalStyles.galleryItem}><Text>5</Text></View>
+          <View style={globalStyles.galleryItem}><Text>6</Text></View>
         </View>
       </View>
 
@@ -343,7 +342,7 @@ const Gallery = ({setGallery}) => {
           <Text style={globalStyles.buttonText}>Dalej</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -366,8 +365,7 @@ const Interests = ({ profile }) => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleSave = () => {
-    setProfile({...profile, interests: selectedItems, name: 'Bartek'});
-    navigation.navigate('Home');
+    // setProfile({...profile, interests: selectedItems, name: 'Bartek'});
   };
 
   const handleItemPress = (itemId) => {
@@ -396,7 +394,7 @@ const Interests = ({ profile }) => {
 
       <View style={globalStyles.buttonWrapper}>
         <TouchableOpacity style={selectedItems.length > 0 ? globalStyles.button : globalStyles.disabledButton}
-                          disabled={selectedItems.length < 1} onPress={handleSave}>
+                          disabled={selectedItems.length < 1} onPress={() => navigation.navigate('Home')}>
           <Text style={globalStyles.buttonText}>Zapisz</Text>
         </TouchableOpacity>
       </View>

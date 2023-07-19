@@ -43,6 +43,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#7F7F7F',
     padding: 5,
     paddingHorizontal: 35,
+    paddingBottom: 6,
     borderRadius: 10,
   },
   buttonText: {
@@ -74,6 +75,9 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 25,
     marginBottom: 10,
     marginHorizontal: 10,
+  },
+  homeFooter: {
+    padding: 20,
   },
   selectedButton: {
     backgroundColor: "#565656"
@@ -123,14 +127,17 @@ export const globalStyles = StyleSheet.create({
   inputPhoneSmall: {
     width: '15%',
   },
+  galleryItems: {
+    flex: 1,
+    paddingVertical: 30,
+  },
   galleryView: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
-  galleryItems: {
-    paddingVertical: 30,
-    flex: 1,
+  galleryView2: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   galleryItem: {
     width: 80,
@@ -215,6 +222,32 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+  },
+  homeView: {
+    flex: 1,
+  },
+  homeIconsWrapper: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  homeRow: {
+    flexDirection: "row",
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    gap: 20,
+  },
+  homeIcon: {
+    width: 80,
+    height: 80,
+    borderRadius: 10,
+    backgroundColor: '#aaa',
+    marginBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  infoText: {
+    fontFamily: 'secondary',
+    marginTop: 20
   }
 });
 
