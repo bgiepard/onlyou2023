@@ -14,7 +14,7 @@ import ico9 from "../assets/homeIcons/ico9.png";
 
 const HomeScreen = () => {
   return (
-    <View style={globalStyles.homeView}>
+    <View style={globalStyles.mainView}>
       <View style={globalStyles.logoWrapper}>
         <Image
           source={logoImage}

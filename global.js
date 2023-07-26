@@ -1,6 +1,10 @@
 
 import { StyleSheet } from 'react-native'
 export const globalStyles = StyleSheet.create({
+  mainView: {
+    backgroundColor: '#ffffff',
+    flex: 1,
+  },
   infoWrapper: {
     flex: 1,
     backgroundColor: '#D0D2D8',
@@ -25,8 +29,8 @@ export const globalStyles = StyleSheet.create({
     marginTop: 30,
   },
   logo: {
-    width: 150,
-    height: 75,
+    width: 250,
+    height: 125,
     marginHorizontal: 'auto',
     marginBottom: 30,
     marginTop: 20,
@@ -34,6 +38,7 @@ export const globalStyles = StyleSheet.create({
   profileWrapper: {
     marginVertical: 10,
     flex: 1,
+    backgroundColor: '#fff'
   },
   buttonWrapper: {
     alignItems: 'center',
@@ -129,7 +134,7 @@ export const globalStyles = StyleSheet.create({
   },
   galleryItems: {
     flex: 1,
-    paddingVertical: 30,
+    paddingVertical: 15,
   },
   galleryView: {
     flexDirection: 'row',
@@ -140,8 +145,8 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   galleryItem: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     borderRadius: 10,
     backgroundColor: '#ddd',
     marginLeft: 20,
@@ -174,7 +179,8 @@ export const globalStyles = StyleSheet.create({
   loginView: {
     flex: 1,
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#ffffff'
   },
   loginWrapper: {
     flex: 1,
@@ -237,8 +243,8 @@ export const globalStyles = StyleSheet.create({
     gap: 20,
   },
   homeIcon: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     borderRadius: 10,
     backgroundColor: '#aaa',
     marginBottom: 20,

@@ -12,7 +12,8 @@ const LoginScreen = () => {
 
   const navigation = useNavigation();
   const handleLogin = () => {
-    signInWithGoogle();
+    navigation.navigate("Profile");
+    // signInWithGoogle();
   }
 
   return (

@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {useCallback} from "react";
 import {View} from "react-native";
+import {globalStyles} from "./global";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,12 +26,14 @@ export default function App() {
   }
 
   return (
-    <View onLayout={onLayoutRootView} style={{flex: 1, backgroundColor: '#ffffff'}}>
-      <NavigationContainer>
-        <AuthProvider>
-          <StackNavigator></StackNavigator>
-        </AuthProvider>
-      </NavigationContainer>
+    <View style={globalStyles.mainView}>
+      <View onLayout={onLayoutRootView} style={{flex: 1}}>
+        <NavigationContainer>
+          <AuthProvider>
+            <StackNavigator></StackNavigator>
+          </AuthProvider>
+        </NavigationContainer>
+      </View>
     </View>
   );
 }
