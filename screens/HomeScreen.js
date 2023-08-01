@@ -26,19 +26,19 @@ const HomeScreen = () => {
           <TouchableOpacity style={globalStyles.homeIcon}>
               <Image
                 source={ico1}
-                style={{width: 60, height: 60}}
+                style={{width: 100, height: 100}}
               />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
               <Image
                 source={ico2}
-                style={{width: 60, height: 60}}
+                style={{width: 100, height: 100}}
               />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico3}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
         </View>
@@ -46,19 +46,19 @@ const HomeScreen = () => {
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico4}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico5}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico6}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
         </View>
@@ -66,19 +66,19 @@ const HomeScreen = () => {
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico7}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico8}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
           <TouchableOpacity style={globalStyles.homeIcon}>
             <Image
               source={ico9}
-              style={{width: 60, height: 60}}
+              style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
         </View>

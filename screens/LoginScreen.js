@@ -26,23 +26,29 @@ const LoginScreen = () => {
       </View>
 
       <View style={globalStyles.loginWrapper}>
-        <Text style={globalStyles.headingText}>
+        <Text style={[globalStyles.headingText, globalStyles.stylesHeading]}>
           Zaloguj się
         </Text>
 
         <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
           <Image source={fb} style={{width: 30, height: 30}}/>
-          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Facebook</Text>
+          <View style={{flexGrow: 1, alignItems: 'center'}}>
+            <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Facebook</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
           <Image source={google} style={{width: 30, height: 30}}/>
-          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Google</Text>
+          <View style={{flexGrow: 1, alignItems: 'center'}}>
+            <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Google</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity style={globalStyles.loginButton} onPress={handleLogin}>
           <Image source={apple} style={{width: 28, height: 30}}/>
-          <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Apple</Text>
+          <View style={{flexGrow: 1, alignItems: 'center'}}>
+            <Text style={[globalStyles.buttonText, globalStyles.loginButtonText]}>Zaloguj się przez Apple</Text>
+          </View>
         </TouchableOpacity>
 
       </View>

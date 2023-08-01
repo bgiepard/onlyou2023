@@ -15,28 +15,38 @@ export const globalStyles = StyleSheet.create({
   },
   headingText: {
     fontFamily: 'Primary',
-    fontSize: 24,
+    fontSize: 28,
     textAlign: 'center'
+  },
+  galleryHeading: {
+    marginBottom: 15
+  },
+  locationHeading: {
+    marginBottom: 15
+  },
+  interestsHeading: {
+    marginBottom: 10,
+  },
+  stylesHeading: {
+    marginBottom: 10,
   },
   subHeading: {
     fontFamily: 'Primary',
-    fontSize: 22,
+    fontSize: 24,
     marginBottom: 5,
     marginTop: 10,
   },
   logoWrapper: {
     alignItems: 'center',
-    marginTop: 30,
+    paddingTop: 20,
+    paddingBottom: 20
   },
   logo: {
     width: 250,
     height: 125,
     marginHorizontal: 'auto',
-    marginBottom: 30,
-    marginTop: 20,
   },
   profileWrapper: {
-    marginVertical: 10,
     flex: 1,
     backgroundColor: '#fff'
   },
@@ -51,6 +61,10 @@ export const globalStyles = StyleSheet.create({
     paddingBottom: 6,
     borderRadius: 10,
   },
+  buttonSquare: {
+    borderRadius: 5,
+    paddingHorizontal: 40
+  },
   buttonText: {
     color: '#FFC400',
     textTransform: 'uppercase',
@@ -63,16 +77,20 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 35,
     borderRadius: 15,
   },
+  disabledButtonSquare: {
+    borderRadius: 5,
+    paddingHorizontal: 40
+  },
   genderView: {
     flex: 1,
     justifyContent: 'center',
-    width: '80%',
+    width: '50%',
     gap: 25,
     marginHorizontal: 30,
   },
   genderWrapper: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   footerInfo: {
     backgroundColor: '#D0D2D8',
@@ -96,8 +114,12 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 5,
     textAlign: 'center'
   },
+  locationSecondaryText: {
+    marginBottom: 0
+  },
   locationView: {
     flex: 1,
+    justifyContent: 'center'
   },
   locationImageWrapper: {
     paddingTop: 50,
@@ -132,9 +154,11 @@ export const globalStyles = StyleSheet.create({
   inputPhoneSmall: {
     width: '15%',
   },
+  inputPhoneSmall2: {
+    width: '20%',
+  },
   galleryItems: {
-    flex: 1,
-    paddingVertical: 15,
+    paddingVertical: 5,
   },
   galleryView: {
     flexDirection: 'row',
@@ -184,7 +208,8 @@ export const globalStyles = StyleSheet.create({
   },
   loginWrapper: {
     flex: 1,
-    width: '70%'
+    width: '70%',
+    justifyContent: 'center',
   },
   loginButton: {
     marginTop: 35,
@@ -194,11 +219,12 @@ export const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 5,
     gap: 20,
-    justifyContent: 'center',
     paddingRight: 10,
   },
   loginButtonText: {
     textTransform: 'none',
+    textAlign: 'center',
+    paddingRight: 10
   },
   loginFooterInfo: {
     backgroundColor: '#D0D2D8',
@@ -235,6 +261,7 @@ export const globalStyles = StyleSheet.create({
   homeIconsWrapper: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center'
   },
   homeRow: {
     flexDirection: "row",
@@ -246,7 +273,6 @@ export const globalStyles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 10,
-    backgroundColor: '#aaa',
     marginBottom: 20,
     alignItems: 'center',
     justifyContent: 'center'
@@ -254,7 +280,31 @@ export const globalStyles = StyleSheet.create({
   infoText: {
     fontFamily: 'secondary',
     marginTop: 20
-  }
+  },
+  birthdayWrapper: {
+    flex: 1,
+  },
+  birthdayContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingBottom: 100
+  },
+  phoneWrapper: {
+    flex: 1,
+  },
+  phoneContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingBottom: 100
+  },
+  galleryWrapper: {
+    flex: 1,
+    paddingBottom: 50,
+  },
+  galleryContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 });
 
 export const interests = [
