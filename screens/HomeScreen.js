@@ -11,8 +11,10 @@ import ico6 from "../assets/homeIcons/ico6.png";
 import ico7 from "../assets/homeIcons/ico7.png";
 import ico8 from "../assets/homeIcons/ico8.png";
 import ico9 from "../assets/homeIcons/ico9.png";
+import {useNavigation} from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={globalStyles.mainView}>
       <View style={globalStyles.logoWrapper}>
@@ -23,19 +25,19 @@ const HomeScreen = () => {
       </View>
       <View style={globalStyles.homeIconsWrapper}>
         <View style={globalStyles.homeRow}>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("Events")}>
               <Image
                 source={ico1}
                 style={{width: 100, height: 100}}
               />
           </TouchableOpacity>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("AddEvent")}>
               <Image
                 source={ico2}
                 style={{width: 100, height: 100}}
               />
           </TouchableOpacity>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("Profiles")}>
             <Image
               source={ico3}
               style={{width: 100, height: 100}}
@@ -43,19 +45,19 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={globalStyles.homeRow}>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("Chat")}>
             <Image
               source={ico4}
               style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("MyProfile")}>
             <Image
               source={ico5}
               style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("MyEvents")}>
             <Image
               source={ico6}
               style={{width: 100, height: 100}}
@@ -63,13 +65,13 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={globalStyles.homeRow}>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("Notifications")}>
             <Image
               source={ico7}
               style={{width: 100, height: 100}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={globalStyles.homeIcon}>
+          <TouchableOpacity style={globalStyles.homeIcon} onPress={() => navigation.navigate("Payments")}>
             <Image
               source={ico8}
               style={{width: 100, height: 100}}
